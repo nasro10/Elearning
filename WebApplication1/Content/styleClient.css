@@ -1,0 +1,89 @@
+﻿.navbar-default {
+    background-color: #4267b2;
+    border-color: #e7e7e7;
+}
+
+    .navbar-default .navbar-nav > li > a {
+        color: #fff;
+    }
+
+body {
+    padding-top: 100px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #e7e7e7;
+}
+
+.nav > li {
+    position: relative;
+    display: block;
+    height: 75px;
+    padding-top: 10px;
+}
+/*
+.myfooter {
+    background-color: #3C4D58;
+    padding: 10px;
+    
+}*/
+
+.myfooter {
+    background-color: #135e8e;
+    padding: 10px;
+    margin-bottom:-200px;
+}
+
+
+.subfooter {
+    background-color: #2c6388;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+/*
+.subfooter {
+    background-color: #303D46;
+    color:white;
+    padding: 10px;
+    text-align:center;
+}*/
+
+
+.logo-size {
+    width: 120px;
+    height: 62px;
+    margin-top: -7px;
+}
+
+#SearchName {
+    width: 130px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    background-image: url('../images/search-icon.png');
+    background-repeat:no-repeat;
+    background-position:10px 10px;
+    padding: 12px 20px 12px 12px;
+    margin-top:5px;
+    transition: width 0.4s ease-in-out;
+}
+
+#SearchName:focus{
+    width:100%;
+}
+
+.img-size{
+    font-size:90px;
+}
+
+.navbar-user{
+    padding:10px;
+    padding-bottom:0px;
+    width:350px;
+}
+@media (min-width:992px){
+.col-md-3{
+    width:23%;
+}
+}

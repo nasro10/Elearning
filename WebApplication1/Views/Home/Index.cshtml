@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Domain.Entities.Category>
+
+@{
+                /**/
+
+                ViewBag.Title = "Home Page";
+                Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<div class="jumbotron alert alert-info">
+    <h2>Welcome Visitor</h2>
+    <p class="lead">You can follow a course or test your skill with a simple and easy way</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+@foreach (var item in Model)
+{
+<div class="panel panel-info" >
+    <div class="panel-heading"><h1>@Html.DisplayFor(modelitem => item.Name)</h1>  </div>
+    
+    <div class="row panel-body">
+        <h5>@Html.DisplayFor(modelitem => item.CategoryDescription)</h5>
+        @foreach (var subItem in item.Books)
+        {
+
+
+        <div class="col-md-3 thumbnail">
+            <img src="~/Uploads/@subItem.Image" style="margin-bottom:30px;height:380px;" />
+            <h3>@Html.DisplayFor(modelItem => subItem.Name)</h3>
+            <h5>@Html.DisplayFor(modelItem => subItem.Description)</h5>
+            <h6 style="">@Html.DisplayFor(modelItem => subItem.Price) <b>TND</b></h6>
+            @Html.ActionLink("Details", "Details", new { BookId = subItem.Id }, new { @class = "btn btn-primary" })
+
+        </div>
+        }
+    </div>
+</div>
+}
+
+

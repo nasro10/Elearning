@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Domain.Entities.Book>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+  <div class="panel panel-info" style="padding:15px;">
+        <h2 class="panel-heading">SearchResult</h2>
+        <div class="row panel-body">
+            @foreach (var subItem in Model)
+            {
+
+
+                <div class="col-md-3 thumbnail">
+                    <img src="~/Uploads/@subItem.Image" style="margin-bottom:30px;height:380px;" />
+                    <h3>@Html.DisplayFor(modelItem => subItem.Name)</h3>
+                    <h5>@Html.DisplayFor(modelItem => subItem.Description)</h5>
+                    <h6 style="">@Html.DisplayFor(modelItem => subItem.Price) <b>TND</b></h6>
+                    @Html.ActionLink("Details", "Details", new { BookId = subItem.Id }, new { @class = "btn btn-primary" })
+
+                </div>
+            }
+        </div>
+    </div>

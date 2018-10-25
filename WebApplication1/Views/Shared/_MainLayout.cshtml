@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@Page.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/styleClient.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <!-- Navbar-->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle " data-toggle="collapse"
+                            data-target="#navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a href="~/Home" class="navbar-brand">
+                        <img src="#" />
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+
+                        <li>
+                            <a href="~/Home/Index">
+                                <i class="glyphicon glyphicon-home"></i>
+                                Home
+                            </a>
+                        </li>
+
+
+
+                        <li>
+                            <a href="~/Home/About">
+                                About Us
+                                <i class="glyphicon glyphicon-info-sign"></i>
+                            </a>
+                        </li>
+
+
+
+                        <li>
+                            <a href="~/Home/Contact">
+                                <i class="glyphicon glyphicon-bell"></i>
+                                Contact Us
+                            </a>
+                        </li>
+
+                        <li>
+                            @using (Html.BeginForm("Search","Home",FormMethod.Post))
+                            {
+                               <input type="text" name="SearchName" id="SearchName"
+                                      placeholder="Search.." />
+                            }
+                        </li>
+
+
+                    </ul>
+
+                    <!--Partial Login-->
+                    @Html.Partial("_LoginPartial")
+
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div class="container">
+            <div class="row" style="min-height:550px;">
+
+
+                @RenderBody()
+
+
+
+            </div>
+        </div>
+
+
+        <!--Footer-->
+        <footer class=" myfooter">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <h3 style="color:white;">
+                            <i class="glyphicon glyphicon-question-sign"></i>
+                            Who are we
+                        </h3>
+                        <p style="color:white">
+                            Self study may either be studying through books, online journals, or watching tutorials to learn a particular topic.Self-study, when done correctly, is a very effective learning tool, so it can be helpful when used to prepare for a test or learn an entirely new subject matter on your own.
+                        </p>
+                    </div>
+
+
+
+                    <div class="col-md-4">
+                        <h3 style="color:white;">
+                            <i class="glyphicon glyphicon-globe"></i>
+                            Usefull Links
+                        </h3>
+                        <ul>
+                            <li>
+
+                                <a href="#" style="color:white">check this out</a>
+                            </li>
+
+                            <li>
+                                <a href="#"style="color:white">International stuff</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3 style="color:white;">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                            Follow Us
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="#"style="color:white">Twitter</a>
+                            </li>
+
+                            <li>
+                                <a href="#"style="color:white">Facebook</a>
+                            </li>
+
+                            <li>
+                                <a href="#"style="color:white">Youtube</a>
+                            </li>
+
+                            <li>
+                                <a href="#"style="color:white">Send us a Message</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="subfooter">
+                <p>
+                    Copyright  &copy; @DateTime.Now.Year - Study Easy. All Rights Reserved.
+                </p>
+            </div>
+        </footer>
+        <script src="~/Scripts/jquery.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    </div>
+</body>
+</html>
